@@ -1,0 +1,31 @@
+server:
+  port: 7900
+spring:
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    platform: h2
+    schema: classpath:schema.sql
+    data: classpath:data.sql
+  application:
+    name: microservice-provider-user # 全部小写，避免混淆   应用名称
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    org.hibernate.type.descriptor.sql.BasicExtractor: trace
+    com.itpx: debug
+eureka:
+  client:
+    healthcheck:   # 健康检查
+      enabled: true
+    serviceUrl:
+      defaultZone: http://user:password@localhost:8761/eureka # 与eureka server 保持一致
+      
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}

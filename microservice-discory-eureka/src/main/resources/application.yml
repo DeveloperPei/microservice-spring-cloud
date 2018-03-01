@@ -1,0 +1,14 @@
+security:  #eureka server 验证登陆  需要添加spring-boot-starter-security 依赖
+  basic:
+    enabled: true
+  user:
+      name: user # login username
+      password: password
+server:
+  port: 8761
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://user:password@localhost:8761/eureka # eureka认证  默认： http://localhost:8761/eureka 不需要认证 
