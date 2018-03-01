@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableEurekaClient
 public class MicroserviceSimpleConsumerMovieApplication {
 	@Bean
-	public RestTemplate rs(){
+	public RestTemplate rs(){ 
 		return new RestTemplate();
 	}
 	public static void main(String[] args) {
