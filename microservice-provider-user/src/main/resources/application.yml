@@ -1,5 +1,5 @@
 server:
-  port: 7900
+  port: 7901
 spring:
   jpa:
     generate-ddl: false
