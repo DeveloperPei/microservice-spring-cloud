@@ -2,7 +2,7 @@ spring:
   application:
     name: microservice-consumer-movie-ribbon
 server:
-  port: 7901
+  port: 7910
 eureka:
   client:
     healthcheck:   # 健康检查
