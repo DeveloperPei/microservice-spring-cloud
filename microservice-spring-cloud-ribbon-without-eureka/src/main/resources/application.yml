@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: microservice-spring-cloud-ribbon-without-eureka
+server:
+  port: 7910
+eureka:
+  client:
+    healthcheck:   # 健康检查
+      enabled: true
+    serviceUrl:
+      defaultZone: http://user:password@localhost:8761/eureka # 与eureka server 保持一致
+  instance:
+    prefer-ip-address: true
+ribbon: 
+  eureka:
+   enabled: false   # 不使用eureka
+microservice-provider-user:   # ribbon指定服务提供的名称
+  ribbon:
+    listOfServers: localhost:7900   # ribbon指定服务提供的ip
