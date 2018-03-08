@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: microservice-consumer-movie-ribbon-properties-customizing
+server:
+  port: 7910
+eureka:
+  client:
+    healthcheck:   # 健康检查
+      enabled: true
+    serviceUrl:
+      defaultZone: http://user:password@localhost:8761/eureka # 与eureka server 保持一致
+  instance:
+    prefer-ip-address: true
+userUrl: http://localhost:7900/simple/
+microservice-provider-user: #ribbon配置 服务提供者名称
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule  # 负载均衡规则   随机规则
+                                 # com.netflix.loadbalancer.WeightedResponseTimeRule 响应时间加权
