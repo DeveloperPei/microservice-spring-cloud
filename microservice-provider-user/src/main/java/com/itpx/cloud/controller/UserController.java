@@ -3,6 +3,8 @@ package com.itpx.cloud.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.itpx.cloud.entity.User;
@@ -25,5 +27,15 @@ public class UserController {
 	public String serviceUrl() {
 	    InstanceInfo instance = discoveryClient.getNextServerFromEureka("MICROSERVICE-PROVIDER-USER", false);
 	    return instance.getHomePageUrl();
+	}
+	
+	@PostMapping("/simple/postTest")
+	public User postUser(@RequestBody User user){
+		return user;
+	}
+	
+	@GetMapping("/simple/getTest")
+	public User getUser(@RequestBody  User user){
+		return user;
 	}
 }

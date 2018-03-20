@@ -56,5 +56,7 @@
 		<module>microservice-consumer-movie-ribbon</module>
 		<module>microservice-consumer-movie-ribbon-properties-customizing</module>
 		<module>microservice-spring-cloud-ribbon-without-eureka</module>
+		<module>microservice-consumer-movie-feign</module>
+		<module>microservice-consumer-movie-feign-customizing</module>
 	</modules>
 </project>
